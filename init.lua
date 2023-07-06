@@ -1,6 +1,6 @@
 -- vim plug plugins
 vim.cmd([[
-call plug#begin(stdpath('data') . '/plugged')
+call plug#begin('~\AppData\Local\nvim\plugged')
 
 		Plug 'preservim/nerdtree' " file tree
 		Plug 'lukas-reineke/indent-blankline.nvim' " indentation lines
@@ -26,6 +26,7 @@ set scrolloff=5	" keep at least 5 lines above/below
 set hlsearch	" highlight the search
 set clipboard=unnamed " copy and paste from clipboard
 set termguicolors
+set noswapfile
 colorscheme tokyonight
 
 " keeps cursor in same place
@@ -35,4 +36,5 @@ autocmd BufReadPost *
 	\ endif
 
 ]])
+
 
