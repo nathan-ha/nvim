@@ -6,12 +6,16 @@ call plug#begin('~\AppData\Local\nvim\plugged')
 		Plug 'lukas-reineke/indent-blankline.nvim' " indentation lines
 		Plug 'folke/tokyonight.nvim' " tokyo night theme
 		Plug 'windwp/nvim-autopairs'
+		Plug 'nvim-lua/plenary.nvim'
+		Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
+		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}			
+		Plug 'windwp/nvim-ts-autotag'
 
 call plug#end()
 ]])
 
 require("nvim-autopairs").setup()
-require("tokyonight").setup() 
+require("nvim-ts-autotag").setup()
 
 -- vim settings
 vim.cmd([[
@@ -25,9 +29,9 @@ set backspace=2	" set backspace key to work like most other editors
 set scrolloff=5	" keep at least 5 lines above/below
 set hlsearch	" highlight the search
 set clipboard=unnamed " copy and paste from clipboard
-set termguicolors
 set noswapfile
-colorscheme tokyonight
+set termguicolors
+colorscheme tokyonight-storm
 
 " keeps cursor in same place
 autocmd BufReadPost *
