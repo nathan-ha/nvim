@@ -1,4 +1,4 @@
-" -- vim plug plugins
+" vim-plug plugins
 call plug#begin('~\AppData\Local\nvim\plugged')
 		Plug 'preservim/nerdtree' " file tree
 		Plug 'lukas-reineke/indent-blankline.nvim' " colored indentation lines
@@ -18,7 +18,7 @@ call plug#begin('~\AppData\Local\nvim\plugged')
 		Plug 'hrsh7th/nvim-cmp'
 call plug#end()
 
-" lua commands
+" lua code
 lua << EOF
 		require("nvim-autopairs").setup()
 		require("nvim-ts-autotag").setup()
@@ -127,7 +127,7 @@ lua << EOF
 		})
 EOF
 
-" -- vim settings
+" vim settings
 syn on	" turn on syntax highlighting
 set tabstop=4	" set tab width
 set nu	" show line numbers to left of text
