@@ -1,7 +1,7 @@
 " Reminders when first using this on new device:
 " 	run :PlugInstall
 " 	install	new languages using :TSInstall
-" 	uncomment the cmp.setup(... code in the lua area and run it once 
+" 	uncomment the cmp.setup(...) code in the lua area and run it once 
 
 
 lua << EOF
@@ -67,8 +67,8 @@ lua << EOF
 --			{ name = 'buffer' },
 --		})
 --	})
---
---
+
+
 	cmp.setup.cmdline({ '/', '?' }, {
 	  mapping = cmp.mapping.preset.cmdline(),
 	  sources = {
