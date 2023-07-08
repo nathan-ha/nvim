@@ -8,12 +8,11 @@ call plug#begin('~\AppData\Local\nvim\plugged')
  	Plug 'folke/tokyonight.nvim' " tokyo night theme
  	Plug 'windwp/nvim-autopairs' " autocompletes brackets and stuff
  	Plug 'nvim-lua/plenary.nvim'
- 	Plug 'nvim-treesitter/nvim-treesitter' "  helps syntax highlighting	
- 	Plug 'windwp/nvim-ts-autotag' " autocompletes html tags
-	Plug 'dstein64/vim-startuptime'
-	Plug 'lambdalisue/fern.vim', { 'on': 'Fern .' } " file tree explorer
-	Plug 'nathom/filetype.nvim' " replaces some file for faster loading
- 	" the next 6 are for autocompletion
+ 	Plug 'nvim-treesitter/nvim-treesitter' " helps syntax highlighting	
+	Plug 'windwp/nvim-ts-autotag' " autocompletes html tags
+	Plug 'dstein64/vim-startuptime', { 'on': 'StartupTime' } " measures startup time
+
+ 	" the next 6 plugins are for autocompletion
  	Plug 'neovim/nvim-lspconfig'
  	Plug 'hrsh7th/cmp-nvim-lsp'
  	Plug 'hrsh7th/cmp-buffer'
@@ -22,10 +21,10 @@ call plug#begin('~\AppData\Local\nvim\plugged')
  	Plug 'hrsh7th/nvim-cmp'
 call plug#end()
  
- " lua code
+" lua code
 lua << EOF
  	require("nvim-autopairs").setup()
- 	require("nvim-ts-autotag").setup()
+	require("nvim-ts-autotag").setup()
  	require('nvim-treesitter.configs').setup {
  	  		highlight = { enable = true }
  	} 
@@ -39,7 +38,6 @@ lua << EOF
 	    { name = 'buffer' }
 	  }
 	})
-	-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 	cmp.setup.cmdline(':', {
 	  mapping = cmp.mapping.preset.cmdline(),
 	  sources = cmp.config.sources({
@@ -58,7 +56,7 @@ set ruler	" show row, col in lower-right corner
 set ignorecase	" case-insensitive search (/ and ?)
 set nocompatible	" vim-specific mode
 " set backspace=2	" set backspace key to work like most other editors
-" set scrolloff=5	" keep at least 5 lines above/below
+set scrolloff=5	" keep at least 5 lines above/below
 set hlsearch	" highlight the search
 " set clipboard=unnamed " copy and paste from clipboard
 set noswapfile
@@ -71,4 +69,4 @@ autocmd BufReadPost *
 	\   exe "normal! g`\"" |
 	\ endif
 
-
+" also i use firacode font: https://github.com/tonsky/FiraCode/wiki/Installing
