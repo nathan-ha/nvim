@@ -130,6 +130,7 @@ set hlsearch	" highlight the search
 set noswapfile
 set termguicolors " fixes colors or something
 set shiftwidth=4 "need this to prevent double-indents on tab
+set shell=powershell " using powershell instead of cmd
 tnoremap <Esc> <C-\><C-n> " lets you enter normal mode in the terminal with escape
 colorscheme tokyonight-storm
 
